@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:grid="http://schemas.android.com/apk/res-auto"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent">
+	
+    	<RelativeLayout
+    	    android:id="@+id/widgetTopLayout"
+    	    android:layout_width="match_parent"
+    	    android:layout_height="30dp">
+    	    
+    	    <TextView 
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:background="@color/ncsu_red">
+            </TextView>					     
+                       
+            <ImageView
+            	android:id="@+id/widgetTitle"
+            	android:layout_height="30dp"
+            	android:layout_width="200dp"
+            	android:layout_alignParentTop="true"
+            	android:layout_centerHorizontal="true"
+            	android:src="@drawable/ncstate_brick">
+            </ImageView>
+    	    
+    	</RelativeLayout>
+	
+	    <LinearLayout
+	        android:id="@+id/leftLayout"
+	        android:layout_width="match_parent"
+	        android:layout_height="match_parent"
+	        android:layout_below="@id/widgetTopLayout"
+	        android:weightSum="1"
+	        android:background="@drawable/widget_background" 
+	        android:orientation="horizontal">
+	
+	        <LinearLayout
+	            android:layout_height="match_parent"
+	            android:layout_width="0dp"
+	            android:layout_weight=".4"
+	            android:orientation="vertical">
+	            
+	            <LinearLayout
+	                android:layout_height="0dp"
+	                android:layout_width="match_parent"
+	                android:layout_weight="1"
+	                android:weightSum="1"
+	                android:orientation="vertical">
+	                
+	                <!-- Weather -->
+		            <RelativeLayout
+		                android:id="@+id/weatherRelativeLayout"
+		                android:layout_height="match_parent"
+		                android:layout_width="match_parent"
+		                android:layout_weight=".6"
+		                android:background="@drawable/widget_listrow">
+		                
+		                <ImageView 
+		                    android:id="@+id/weatherIcon"
+		                    android:layout_height="70dp"
+		                    android:layout_width="70dp"
+		                    android:layout_alignParentTop="true"
+		                    android:paddingTop="10dp"
+		                    android:layout_alignParentLeft="true"
+		                    android:padding="5dp"
+		                    android:scaleType="fitCenter">
+		                </ImageView>
+		                
+		                <TextView
+		                    android:id="@+id/weatherCurrentTemp"
+		                    android:layout_height="wrap_content"
+		                    android:layout_width="wrap_content"
+		                    android:layout_alignTop="@id/weatherIcon"
+		                    android:paddingTop="15dp"
+		                    android:layout_toRightOf="@id/weatherIcon"
+		                    android:textColor="#000"
+		                    android:textSize="25sp">
+		                </TextView>
+		                
+		                <!-- <TextView
+		                    android:id="@+id/weatherApparentTemp"
+		                    android:layout_height="wrap_content"
+		                    android:layout_width="wrap_content"
+		                    android:layout_alignLeft="@id/weatherCurrentTemp"
+		                    android:layout_below="@id/weatherCurrentTemp">
+		                </TextView> -->
+		                   
+		                
+		                <TextView
+		                    android:id="@+id/weatherMinTemp"
+		                    android:layout_height="wrap_content"
+		                    android:layout_width="wrap_content"
+		                    android:layout_alignParentLeft="true"
+		                    android:layout_below="@id/weatherIcon"
+		                    android:paddingLeft="5sp"
+		                    android:textSize="20sp"
+		                    android:textColor="#0078F0">
+		                </TextView>
+		                
+		                <TextView
+		                    android:id="@+id/weatherSlash"
+		                    android:layout_height="wrap_content"
+		                    android:layout_width="wrap_content"
+		                    android:layout_toRightOf="@id/weatherMinTemp"
+		                    android:layout_alignTop="@id/weatherMinTemp"
+		                    android:text="/"
+		                    android:textSize="20sp"
+		                    android:textColor="@color/black">
+		                </TextView>
+		                
+		                <TextView
+		                    android:id="@+id/weatherMaxTemp"
+		                    android:layout_height="wrap_content"
+		                    android:layout_width="wrap_content"
+		                    android:layout_toRightOf="@id/weatherSlash"
+		                    android:layout_alignTop="@id/weatherSlash"
+		                    android:textSize="20sp"
+		                    android:textColor="#cc3300">
+		                </TextView>
+		                
+		            </RelativeLayout>
+			        
+		            <!-- Shortcut buttons -->
+		            <LinearLayout
+		                android:layout_height="match_parent"
+		                android:layout_width="match_parent"
+		                android:layout_weight=".4"
+		                android:weightSum="2"
+		                android:orientation="vertical"
+		                android:background="@drawable/widget_listrow">
+		                
+		                <LinearLayout
+			                android:layout_height="match_parent"
+			                android:layout_width="match_parent"
+			                android:weightSum="2"
+			                android:orientation="horizontal"
+			                android:layout_weight="1"
+			                android:baselineAligned="false">
+			                
+		                    <RelativeLayout
+		                        android:layout_height="match_parent"
+		                        android:layout_width="match_parent"
+		                        android:layout_weight="1">
+		                        
+		                
+				                <ImageButton
+				                    android:id="@+id/widgetDiningButton"
+				                    android:layout_height="50dp"
+				                    android:layout_width="50dp"
+				                    android:layout_centerHorizontal="true"
+				                    android:src="@drawable/forkandknife48"
+				                    android:scaleType="centerInside"
+				                    android:paddingBottom="-10dp">
+				                </ImageButton>
+				                
+				                <TextView
+				                    android:layout_height="wrap_content"
+				                    android:layout_width="wrap_content"
+				                    android:layout_below="@id/widgetDiningButton"
+				                    android:layout_centerHorizontal="true"
+				                    android:text="Dining"
+				                    android:textColor="@color/black">
+				                </TextView>
+				                
+				            </RelativeLayout>
+				            
+		                    <RelativeLayout
+		                        android:layout_height="match_parent"
+		                        android:layout_width="match_parent"
+		                        android:layout_weight="1">
+			                
+				                <ImageButton
+				                    android:id="@+id/widgetMapButton"
+				                    android:layout_height="50dp"
+				                    android:layout_width="50dp"
+				                    android:layout_centerHorizontal="true"
+				                    android:src="@drawable/map48"
+				                    android:scaleType="centerInside">
+				          		</ImageButton>
+				          		
+				                <TextView
+				                    android:layout_height="wrap_content"
+				                    android:layout_width="wrap_content"
+				                    android:layout_below="@id/widgetMapButton"
+				                    android:layout_centerHorizontal="true"
+				                    android:text="Map"
+				                    android:textColor="@color/black">
+				                </TextView>
+				                
+				            </RelativeLayout>
+			          		
+			          	</LinearLayout>
+			          	
+		                <LinearLayout
+			                android:layout_height="match_parent"
+			                android:layout_width="match_parent"
+			                android:weightSum="2"
+			                android:orientation="horizontal"
+			                android:layout_weight="1"
+			                android:baselineAligned="false">
+		                    
+		                    <RelativeLayout
+		                        android:layout_height="match_parent"
+		                        android:layout_width="match_parent"
+		                        android:layout_weight="1">
+		          		
+				                <ImageButton
+				                    android:id="@+id/widgetWolflineButton"
+				                    android:layout_height="50dp"
+				                    android:layout_width="50dp"
+				                    android:layout_centerHorizontal="true"
+				                    android:src="@drawable/bus48"
+				                    android:scaleType="centerInside">
+				          		</ImageButton>
+				          		
+				                <TextView
+				                    android:layout_height="wrap_content"
+				                    android:layout_width="wrap_content"
+				                    android:layout_below="@id/widgetWolflineButton"
+				                    android:layout_centerHorizontal="true"
+				                    android:text="Wolfline"
+				                    android:textColor="@color/black">
+				                </TextView>
+				                
+				            </RelativeLayout>
+			          		
+		                    <RelativeLayout
+		                        android:layout_height="match_parent"
+		                        android:layout_width="match_parent"
+		                        android:layout_weight="1">
+		                    
+				                <ImageButton
+				                    android:id="@+id/widgetDirectoryButton"
+				                    android:layout_height="50dp"
+				                    android:layout_width="50dp"
+				                    android:layout_centerHorizontal="true"
+				                    android:src="@drawable/people48"
+				                    android:scaleType="centerInside">
+				          		</ImageButton>
+				          		
+				                <TextView
+				                    android:layout_height="wrap_content"
+				                    android:layout_width="wrap_content"
+				                    android:layout_below="@id/widgetDirectoryButton"
+				                    android:layout_centerHorizontal="true"
+				                    android:text="Directory"
+				                    android:textColor="@color/black">
+				                </TextView>
+				                
+				            </RelativeLayout>
+			          		
+			          	</LinearLayout>
+		                
+		            </LinearLayout>
+		            
+		        </LinearLayout>
+		        	
+	            
+	        </LinearLayout>
+		        
+	        <!-- Stories ListView -->
+	        <RelativeLayout
+	            android:layout_height="match_parent"
+	            android:layout_width="0dp"
+	            android:layout_weight=".6"
+	            android:background="@drawable/widget_listrow">
+	            
+	            <TextView
+	                android:id="@+id/storiesListTitle"
+	                android:layout_height="30dp"
+	                android:layout_width="match_parent"
+	                android:layout_alignParentTop="true"
+	                android:layout_centerHorizontal="true"
+	                android:gravity="center"
+	                android:text="Featured Stories"
+	                android:textSize="22sp"
+	                android:textColor="@color/black"
+	                android:textStyle="bold"
+	                android:background="@drawable/widget_listrow">
+	            </TextView>
+	            
+	            <ListView
+	                android:id="@+id/storiesListView"
+	                android:layout_height="wrap_content"
+	                android:layout_width="match_parent"
+	                android:layout_below="@id/storiesListTitle"
+	                android:padding="2dp"
+	                android:background="@drawable/widget_listrow">
+	            </ListView>
+	            
+	        </RelativeLayout>
+	            
+			<!-- <Button
+			    android:id="@+id/buttonTest"
+			    android:layout_height="40dp"
+			    android:layout_width="40dp">
+			</Button> -->
+	    </LinearLayout> 
+</RelativeLayout>
